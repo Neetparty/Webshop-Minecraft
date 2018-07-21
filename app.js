@@ -9,6 +9,7 @@ const session = require('express-session')
 var mysql = require('./model/connect')
 const passport = require('passport')
 const ms = require('./minestat')
+const tw = require('./model/wallet')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
