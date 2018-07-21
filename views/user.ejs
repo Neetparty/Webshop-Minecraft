@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>The Eternity Webshop</title>
+        <%- include partials/script.ejs %>
+    </head>
+    <body>
+        <% if(dataUser !== '') { %>
+              <%- include partials/header-login.ejs %>
+        <% } %>
+        <% if(dataUser === '') {%>
+              <%- include partials/header-default.ejs %>
+        <% } %>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-3">
+                  <div class="card border-light">
+                      <img class="card-img-top w-25 rounded mx-auto d-block img-margin" src="https://minotar.net/body/<%= dataUser.realname %>" alt="body<%= dataUser.realname %>">
+                      <div class="card-body">
+                        <h5 class="card-title text-center"><%= dataUser.realname %></h5>
+                      </div>
+                      <div class="uk-card uk-card-default uk-card-body">
+                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+                            <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-coins"></i></span> Point : </a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-globe"></i></span> Status : </a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-chess-queen"></i></span> Rank : </a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-user-cog"></i></span> Setting</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div uk-slideshow="animation: fade">
+                        <div class="uk-position-relative uk-visible-toggle uk-light">
+                            <ul class="uk-slideshow-items">
+                                <li>
+                                    <img src="https://i.imgur.com/njv1l4v.png" alt="" uk-cover>
+                                </li>
+                                <li>
+                                    <img src="http://moshlab.com/wp-content/uploads/2015/05/Minecraft-Cave-Game-Wallpaper-For-Desktop-Mobile-Free-Download-71616629882.jpg" alt="" uk-cover>
+                                </li>
+                                <li>
+                                    <img src="https://c.wallhere.com/photos/64/ec/Minecraft-159907.png!d" alt="" uk-cover>
+                                </li>
+                            </ul>
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <% if(page === 'news') {%>
+                            <nav class="nav nav-pills nav-justified">
+                                <a class="nav-item nav-link active btn btn-outline-info" href="/user/<%= dataUser.realname %>">News</a>
+                                <a class="nav-item nav-link btn btn-outline-info" href="/user/<%= dataUser.realname %>/promotion">Promotion</a>
+                                <a class="nav-item nav-link btn btn-outline-info" href="/user/<%= dataUser.realname %>/event">Event</a>
+                            </nav>
+                        <% } %>
+                        <% if(page === 'promotion') {%>
+                            <nav class="nav nav-pills nav-justified">
+                                <a class="nav-item nav-link btn btn-outline-info" href="/user/<%= dataUser.realname %>">News</a>
+                                <a class="nav-item nav-link active btn btn-outline-info" href="/user/<%= dataUser.realname %>/promotion">Promotion</a>
+                                <a class="nav-item nav-link btn btn-outline-info" href="/user/<%= dataUser.realname %>/event">Event</a>
+                            </nav>
+                        <% } %>
+                        <% if(page === 'event') {%>
+                            <nav class="nav nav-pills nav-justified">
+                                <a class="nav-item nav-link btn btn-outline-info" href="/user/<%= dataUser.realname %>">News</a>
+                                <a class="nav-item nav-link btn btn-outline-info" href="/user/<%= dataUser.realname %>/promotion">Promotion</a>
+                                <a class="nav-item nav-link active btn btn-outline-info" href="/user/<%= dataUser.realname %>/event">Event</a>
+                            </nav>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-3">
+                    <!--<div class="card border-light">
+                        <div class="uk-card uk-card-default uk-card-body">
+                          <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+                              <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-coins"></i></span> Point History </a></li>
+                              <li class="uk-nav-divider"></li>
+                              <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-globe"></i></span> Shop History </a></li>
+                              <li class="uk-nav-divider"></li>
+                              <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-chess-queen"></i></span> Rank History </a></li>
+                              <li class="uk-nav-divider"></li>
+                              <li><a href="#"><span class="uk-margin-small-right"><i class="fas fa-user-cog"></i></span> Setting</a></li>
+                          </ul>
+                      </div>-->
+                </div>
+            </div>
+        </div>
+        <%- include partials/footer.ejs %>
+    </body>
+</html>
+<!-- <img src="https://minotar.net/body/<%= dataUser.realname %>/100.png" alt="body<%= dataUser.realname %>"> -->

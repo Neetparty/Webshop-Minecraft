@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Eternity Webshop || Register</title>
+    <%- include partials/script.ejs %>
+  </head>
+  <body>
+
+    <%- include partials/header.ejs %>
+
+    <div class="uk-background-cover bg-img uk-flex uk-flex-stretch uk-flex-center" style="background-image: url(/images/background.png);">
+      <div class="uk-grid-collapse uk-grid-match" uk-grid>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-expand">
+                      <h1 class="uk-card-titles uk-text-mute uk-text-center uk-margin-remove-bottom">Register</h1>
+                  </div>
+              </div>
+          </div>
+          <div uk-grid class="uk-card-body">
+            <form method="post" id="form">
+                <% if(err === undefined) { %>
+                    <div class="uk-margin">
+                        <div class="uk-width-3-4">
+                            <label>Username : </label>
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input uk-form-width-large" id="username" name="username" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <div class="uk-width-3-4">
+                            <label>Password : </label>
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input class="uk-input uk-form-width-large" name="password" type="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <div class="uk-width-3-4">
+                            <label>Confirm Password : </label>
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input class="uk-input uk-form-width-large" name="cpass" type="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <div class="uk-width-3-4">
+                            <label>E-mail : </label>
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                <input class="uk-input uk-form-width-large" id="email" name="email" type="email">
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+              <% if(err === 'username') { %>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Username : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: user"></span>
+                              <input class="uk-input uk-form-width-large uk-form-danger" id="username" name="username" type="text" placeholder="Invalid username">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large" name="password" type="password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Confirm Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large" name="cpass" type="password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>E-mail : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                              <input class="uk-input uk-form-width-large" id="email" name="email" type="email">
+                          </div>
+                      </div>
+                  </div>
+              <% } %>
+              <% if(err === 'duplicate') { %>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Username : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: user"></span>
+                              <input class="uk-input uk-form-width-large uk-form-danger" id="username" name="username" type="text" placeholder="Username is duplicate">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large" name="password" type="password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Confirm Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large" name="cpass" type="password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>E-mail : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                              <input class="uk-input uk-form-width-large" id="email" name="email" type="email">
+                          </div>
+                      </div>
+                  </div>
+              <% } %>
+              <% if(err === 'email') { %>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Username : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: user"></span>
+                              <input class="uk-input uk-form-width-large" id="username" name="username" type="text">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large" name="password" type="password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Confirm Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large" name="cpass" type="password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>E-mail : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                              <input class="uk-input uk-form-width-large uk-form-danger" id="email" name="email" type="email" placeholder="Invalid Email">
+                          </div>
+                      </div>
+                  </div>
+              <% } %>
+              <% if(err === 'password') { %>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Username : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: user"></span>
+                              <input class="uk-input uk-form-width-large" id="username" name="username" type="text">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large uk-form-danger" name="password" type="password" placeholder="Invalid password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Confirm Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large" name="cpass" type="password">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>E-mail : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                              <input class="uk-input uk-form-width-large" id="email" name="email" type="email">
+                          </div>
+                      </div>
+                  </div>
+              <% } %>
+              <% if(err === 'not match') { %>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Username : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: user"></span>
+                              <input class="uk-input uk-form-width-large" id="username" name="username" type="text">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large uk-form-danger" name="password" type="password" placeholder="Password not match">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>Confirm Password : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                              <input class="uk-input uk-form-width-large uk-form-danger" name="cpass" type="password" placeholder="Password not match">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="uk-margin">
+                      <div class="uk-width-3-4">
+                          <label>E-mail : </label>
+                          <div class="uk-inline">
+                              <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                              <input class="uk-input uk-form-width-large" id="email" name="email" type="email">
+                          </div>
+                      </div>
+                  </div>
+              <% } %>
+              <div class="uk-margin">
+                 <button id="register" class="uk-button uk-button-text ">Register</button>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include partials/footer.ejs %>
+
+  </body>
+  <script>
+
+  </script>
+</html>

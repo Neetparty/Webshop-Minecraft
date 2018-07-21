@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Eternity Webshop by Harukaze Neet</title>
+    <%- include partials/script.ejs %>
+  </head>
+  <body>
+      <% if(dataUser !== '') { %>
+            <%- include partials/header-login.ejs %>
+      <% } %>
+      <% if(dataUser === '') {%>
+            <%- include partials/header-default.ejs %>
+      <% } %>
+    <div>
+        <div class="uk-background-cover bg-img uk-panel uk-flex uk-flex-center uk-flex-middle uk-flex-column uk-text-center" style="background-image: url(/images/background.png);">
+          <p class="uk-h1 uk-animation-fade" style="color: #fff;">The Eternity Webshop</p>
+          <div class="uk-animation-fade" style="color: #fff;">
+            <!--<p><%= host %></p>-->
+            <% if(online === true){ %>
+              <label>Status : </label><label class="uk-text-success">Online</label>
+              <p>Player Online : <label class="uk-text-success player"><%= players %></label><label class="max-player"> / <%= max_player %></label></p>
+            <% } %>
+            <% if(online === undefined){ %>
+              <label>Status : </label><label class="uk-text-danger">Offline</label>
+            <% } %>
+          </div>
+        </div>
+    </div>
+
+    <%- include partials/footer.ejs %>
+
+  </body>
+</html>

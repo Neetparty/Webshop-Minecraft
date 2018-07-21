@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Eternity Webshop || Login</title>
+    <%- include partials/script.ejs %>
+  </head>
+  <body>
+
+    <%- include partials/header.ejs %>
+
+    <div class="uk-background-cover bg-img-login uk-flex uk-flex-stretch uk-flex-center" style="background-image: url(/images/background.png);">
+      <div class="uk-grid-collapse uk-grid-match" uk-grid>
+        <div class="uk-card uk-card-small uk-card-default">
+          <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-expand">
+                      <h1 class="uk-card-titles uk-text-mute uk-text-center uk-margin-remove-bottom">Login</h1>
+                  </div>
+              </div>
+          </div>
+          <div uk-grid class="uk-card-body card-body-hight">
+            <form method="post" action="/login">
+              <div class="uk-margin">
+                  <div class="uk-width-3-4">
+                      <label>Username : </label>
+                      <div class="uk-inline">
+                          <span class="uk-form-icon" uk-icon="icon: user"></span>
+                          <input class="uk-input uk-form-width-large" name="username" type="text">
+                      </div>
+                  </div>
+              </div>
+              <div class="uk-margin">
+                  <div class="uk-width-3-4">
+                      <label>Password : </label>
+                      <div class="uk-inline">
+                          <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                          <input class="uk-input uk-form-width-large" name="password" type="password">
+                      </div>
+                  </div>
+              </div>
+              <div class="uk-margin">
+                  <label class="uk-button-text"><input class="uk-checkbox" type="checkbox"> Remember Me</label>
+              </div>
+              <div class="uk-margin">
+                 <button class="uk-button uk-button-text ">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include partials/footer.ejs %>
+
+  </body>
+</html>
