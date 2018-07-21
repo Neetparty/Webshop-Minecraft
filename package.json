@@ -17,6 +17,7 @@
     "morgan": "~1.9.0",
     "mysql": "^2.15.0",
     "net": "^1.0.2",
+    "node-twallet": "^1.0.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.4.5",

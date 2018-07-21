@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
     if(req.session.passport){
         const user = req.session.passport.user
         mysql.query('SELECT * FROM authme WHERE id="' + user + '"', (error, results, fields) => {
-            if(results[0].username == req.params.username || results[0].realname == req.params.username){
+            if(results[0].username){
                 res.render('point', {
                     dataUser : results[0],
                 });
